@@ -1,4 +1,4 @@
-function [] = DHM()
+function [] = DHM2()
 %rng(47);
 data = csvread('mammographic_masses.data');
 featureData = data(:,2:5);
@@ -31,7 +31,7 @@ for t = 1:numsamples
     hminuserr = getErr(svmMinus, featureData(SUnionT==1,:), SUnionTLabels(SUnionT==1))
     hpluserr-hminuserr
     beta = .1*sqrt((4*log(t)+log(1/0.05))/t);
-    Delta = (beta^2 + beta*(sqrt(hpluserr)+sqrt(hminuserr))) *0.1
+    Delta = (beta^2 + beta*(sqrt(hpluserr)+sqrt(hminuserr)))
     
     if flagPlus == 1
         % positive case failed
@@ -76,8 +76,10 @@ for t = 1:numsamples
         RandErr(cost) = sum(rPreds ~= TRUE_LABELS)/size(featureData,1);
     end
      
-
-    
+    if (sum(S==1) ~= 0),
+        SLabels(S == 1) = predict(cursvm, featureData(S == 1,:));
+        SUnionTLabels(S == 1) = SLabels(S == 1);
+    end
     costcurve(t) = cost;
     
 end
@@ -88,7 +90,6 @@ plot(GenErr, 'b');
 hold on;
 plot(RandErr, 'r');
 hold off;
-
 end
 
 function [err] = getErr(svm, features, labels)
