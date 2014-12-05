@@ -1,4 +1,4 @@
-function [] = DHM2()
+function [GenErr RandErr] = DHM2()
 %rng(47);
 data = csvread('mammographic_masses.data');
 featureData = data(:,2:5);
@@ -13,25 +13,33 @@ SUnionTLabels = zeros(numsamples, 1);
 
 random_indicies = randsample(numsamples,numsamples);
 random_indicies_random = randsample(numsamples,numsamples);
-cursvm = fitcsvm([1], [1], 'ClassNames', [0, 1]);
 cost = 0;
 costcurve=zeros(1, numsamples);
 RandErr = sum(TRUE_LABELS)/numsamples;
 GenErr = sum(TRUE_LABELS)/numsamples;
-for t = 1:numsamples
+upper = 5;
+cursvm = fitcsvm(featureData(random_indicies(1:upper),:),TRUE_LABELS(random_indicies(1:upper)));
+T(random_indicies(1:upper)) = 1;
+TLabels(random_indicies(1:upper)) = TRUE_LABELS(random_indicies(1:upper));
+SUnionT = T;
+SUnionTLabels = TLabels;
+R(random_indicies_random(1:upper)) = 1;
+for t = upper+1:numsamples
     t
     index = random_indicies(t);
     %index = t;
     x_t = featureData(index,:);
     
-    [svmPlus, flagPlus] = learn(featureData(SUnionT==1,:),TRUE_LABELS(SUnionT==1), x_t, 1, cursvm);
-    [svmMinus, flagMinus] = learn(featureData(SUnionT==1,:),TRUE_LABELS(SUnionT==1), x_t, 0, cursvm);
+    [svmPlus, flagPlus] = learn(featureData(SUnionT==1,:),SUnionTLabels(SUnionT==1), x_t, 1, cursvm);
+    [svmMinus, flagMinus] = learn(featureData(SUnionT==1,:),SUnionTLabels(SUnionT==1), x_t, 0, cursvm);
     
-    hpluserr = getErr(svmPlus, featureData(SUnionT==1,:), SUnionTLabels(SUnionT==1))
-    hminuserr = getErr(svmMinus, featureData(SUnionT==1,:), SUnionTLabels(SUnionT==1))
-    hpluserr-hminuserr
-    beta = .1*sqrt((4*log(t)+log(1/0.05))/t);
-    Delta = (beta^2 + beta*(sqrt(hpluserr)+sqrt(hminuserr)))
+    hpluserr = getErr(svmPlus, featureData(SUnionT==1,:), SUnionTLabels(SUnionT==1));
+    hminuserr = getErr(svmMinus, featureData(SUnionT==1,:), SUnionTLabels(SUnionT==1));
+    hpluserr-hminuserr;
+    beta = .1*sqrt((5*log(t)+log(1/0.05))/t);
+    Delta = (beta^2 + beta*(sqrt(hpluserr)+sqrt(hminuserr)));
+    %Delta = inf;
+    
     
     if flagPlus == 1
         % positive case failed
@@ -48,6 +56,7 @@ for t = 1:numsamples
         SUnionTLabels(index) = 1;
         cursvm = svmPlus;
     elseif (hminuserr-hpluserr) > Delta
+        'Case 1'
         % Add positive case
         S(index) = 1;
         SUnionT(index) = 1;
@@ -55,6 +64,7 @@ for t = 1:numsamples
         SUnionTLabels(index) = 1;
         cursvm = svmPlus;
     elseif (hpluserr-hminuserr) > Delta
+        'Case 2'
         S(index) = 1;
         SUnionT(index) = 1;
         SLabels(index) = 0;
@@ -107,21 +117,18 @@ function [svm, flag] = learn(training_data, training_labels, new_point,assigned_
        return;
     end
     
-    numSupportVectorsNew = size(svm.SupportVectors, 1);
-    numSupportVectorsOld = size(old_svm.SupportVectors, 1);
-    diff = abs(numSupportVectorsNew - numSupportVectorsOld);
+    %numSupportVectorsNew = size(svm.SupportVectors, 1);
+    %numSupportVectorsOld = size(old_svm.SupportVectors, 1);
+    %diff = abs(numSupportVectorsNew - numSupportVectorsOld);
     
-    if diff < 1,
-       flag = 0; 
-    else
-       flag = 1;
-    end
+    %if diff < 2,
+    %   flag = 0; 
+    %else
+    %   flag = 1;
+    %end
     
-    %[newPredictions newScore] = predict(svm, [training_data; new_point]);
-    %[oldPredictions oldScore] = predict(old_svm, [training_data; new_point]);
-    %newScore
-    %oldScore
-    %flag = newScore > oldScore;
-    
+    newErr = getErr(svm, [training_data;new_point], [training_labels;assigned_label]);
+    oldErr = getErr(old_svm, [training_data;new_point], [training_labels;assigned_label]);
+    flag = newErr>oldErr
     %flag = not(isempty(find(newPredictions == training_labels) == 0));
 end
