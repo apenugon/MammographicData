@@ -1,9 +1,19 @@
 function [GenErr RandErr] = DHM2()
-%rng(47);
+rng(47);
 data = csvread('mammographic_masses.data');
+newData = [];
+for i = 1:size(data, 1),
+    curRow = data(i,:);
+    if size(curRow(curRow == -1), 2) == 0,
+        newData = [newData; curRow];
+    end
+end
+newData
+size(newData)
 featureData = data(:,2:5);
 TRUE_LABELS = data(:,6);
-numsamples = 200;
+numsamples = 100;
+Sup = zeros(numsamples, 1);
 S = zeros(numsamples, 1);
 SLabels = zeros(numsamples, 1);
 T = zeros(numsamples, 1);
@@ -12,23 +22,28 @@ SUnionT = zeros(numsamples, 1);
 SUnionTLabels = zeros(numsamples, 1);
 
 random_indicies = randsample(numsamples,numsamples);
-random_indicies_random = randsample(numsamples,numsamples);
 cost = 0;
 costcurve=zeros(1, numsamples);
-RandErr = sum(TRUE_LABELS)/numsamples;
 GenErr = sum(TRUE_LABELS)/numsamples;
-upper = 5;
+SupErr = sum(TRUE_LABELS)/numsamples;
+upper = 1;
 cursvm = fitcsvm(featureData(random_indicies(1:upper),:),TRUE_LABELS(random_indicies(1:upper)));
 T(random_indicies(1:upper)) = 1;
 TLabels(random_indicies(1:upper)) = TRUE_LABELS(random_indicies(1:upper));
 SUnionT = T;
 SUnionTLabels = TLabels;
-R(random_indicies_random(1:upper)) = 1;
+sup(random_indicies(1:upper)) = 1;
+precision = costcurve;
+recall = costcurve;
+f1score = costcurve;
 for t = upper+1:numsamples
     t
     index = random_indicies(t);
-    %index = t;
     x_t = featureData(index,:);
+    sup(index) = 1;
+    supsvm = fitcsvm(featureData(sup==1,:), TRUE_LABELS(sup==1));
+    supPreds = predict(supsvm, featureData);
+    SupErr(t) = sum(supPreds ~= TRUE_LABELS)/size(featureData, 1);
     
     [svmPlus, flagPlus] = learn(featureData(SUnionT==1,:),SUnionTLabels(SUnionT==1), x_t, 1, cursvm);
     [svmMinus, flagMinus] = learn(featureData(SUnionT==1,:),SUnionTLabels(SUnionT==1), x_t, 0, cursvm);
@@ -38,7 +53,6 @@ for t = upper+1:numsamples
     hpluserr-hminuserr;
     beta = .1*sqrt((5*log(t)+log(1/0.05))/t);
     Delta = (beta^2 + beta*(sqrt(hpluserr)+sqrt(hminuserr)));
-    %Delta = inf;
     
     
     if flagPlus == 1
@@ -56,7 +70,6 @@ for t = upper+1:numsamples
         SUnionTLabels(index) = 1;
         cursvm = svmPlus;
     elseif (hminuserr-hpluserr) > Delta
-        'Case 1'
         % Add positive case
         S(index) = 1;
         SUnionT(index) = 1;
@@ -64,33 +77,31 @@ for t = upper+1:numsamples
         SUnionTLabels(index) = 1;
         cursvm = svmPlus;
     elseif (hpluserr-hminuserr) > Delta
-        'Case 2'
         S(index) = 1;
         SUnionT(index) = 1;
         SLabels(index) = 0;
         SUnionTLabels(index) = 0;
         cursvm = svmMinus;
     else
-        R(random_indicies_random(t)) = 1;
         T(index) = 1;
         SUnionT(index) = 1;
         TLabels(index) = TRUE_LABELS(index);
         SUnionTLabels(index) = TLabels(index);
         %TODO: Assign new SVM correctly
         cursvm = fitcsvm(featureData(SUnionT == 1, :), SUnionTLabels(SUnionT == 1));
-        randsvm = fitcsvm(featureData(R==1,:),TRUE_LABELS(R==1));
         cost = cost + 1;
         sPreds = predict(cursvm, featureData);
-        rPreds = predict(randsvm, featureData);
         GenErr(cost) = sum(sPreds ~= TRUE_LABELS)/size(featureData, 1);
-        RandErr(cost) = sum(rPreds ~= TRUE_LABELS)/size(featureData,1);
-    end
-     
-    if (sum(S==1) ~= 0),
-        SLabels(S == 1) = predict(cursvm, featureData(S == 1,:));
-        SUnionTLabels(S == 1) = SLabels(S == 1);
     end
     costcurve(t) = cost;
+    
+    curPredictions = predict(cursvm, featureData);
+    numerator = size(find(curPredictions == 1 & TRUE_LABELS == 1), 1)
+    denom = sum(TRUE_LABELS == 1);
+    recall(t) = numerator/denom;
+    
+    denom = sum(curPredictions==1);
+    precision(t) = numerator/denom;
     
 end
 figure(1);
@@ -98,8 +109,20 @@ plot(costcurve);
 figure(2);
 plot(GenErr, 'b');
 hold on;
-plot(RandErr, 'r');
+plot(SupErr, 'r');
 hold off;
+
+f1score = 2 * ((precision.*recall)./(precision+recall));
+
+figure(3);
+plot(precision, 'b');
+hold on;
+plot(recall, 'r');
+hold on;
+plot(f1score, 'g');
+hold off;
+
+
 end
 
 function [err] = getErr(svm, features, labels)
@@ -117,18 +140,7 @@ function [svm, flag] = learn(training_data, training_labels, new_point,assigned_
        return;
     end
     
-    %numSupportVectorsNew = size(svm.SupportVectors, 1);
-    %numSupportVectorsOld = size(old_svm.SupportVectors, 1);
-    %diff = abs(numSupportVectorsNew - numSupportVectorsOld);
-    
-    %if diff < 2,
-    %   flag = 0; 
-    %else
-    %   flag = 1;
-    %end
-    
     newErr = getErr(svm, [training_data;new_point], [training_labels;assigned_label]);
     oldErr = getErr(old_svm, [training_data;new_point], [training_labels;assigned_label]);
-    flag = newErr>oldErr
-    %flag = not(isempty(find(newPredictions == training_labels) == 0));
+    flag = newErr>oldErr;
 end
