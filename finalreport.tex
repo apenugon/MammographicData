@@ -21,6 +21,10 @@ Currently, the scenario in an oncologist's room is thus: a patient enters with a
 
 \subsection{Related Work}
 
+There is a large corpus of papers using machine learning to predict the incidence of disease. Shipp and Ross (2002) created a supervised learner to predict lymphoma outcomes for two classes of patients. 
+
+Satires (2011) used the same dataset with an artificial neural network to predict breast cancer. Notably, this dataset includes the BI-RAD feature of the dataset. With their methodology, they achieved a disease prediction rate of 90.5\%. 
+
 \section{Methods}
 
 \subsection{Data Source}
@@ -86,8 +90,9 @@ Irregular masses are indicative of malignancy by virtue of the fact that they ar
 
 \subsection{Active Learning}
 
+We applied DHM to a random subset of 200 data points from the set. This was meant to simulate the stream of patients that a doctor's office recieves. Our algorithm utilized an SVM to represent our hypothesis. We defined a new hypothesis as consistent if the error on the new hypothesis was lower than the error of the old hypothesis. Other methods such as comparing the number of support vectors and thresholding were attempted, but these did not work as well.
 
-
+Since our support vector uses a linear kernel, 
 \section{Results}
 
 \begin{figure}
@@ -113,8 +118,10 @@ Irregular masses are indicative of malignancy by virtue of the fact that they ar
 
 \section{Discussion}
 
-\section{Results}
+\section{Conclusion}
 
 \subsection{Future Work}
+
+We would like to create a new metric to analyze the details involved in 
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  10 DEC 2014 15:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  10 DEC 2014 17:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -141,18 +141,18 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (9.22641pt too wide) in paragraph at lines 37--38
+Overfull \hbox (9.22641pt too wide) in paragraph at lines 43--44
 []\OT1/cmr/m/n/12 Taken from https://archive.ics.uci.edu/ml/datasets/Mammograph
 ic+Mass 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 47.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 53.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
- [2]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
+ [2] [3]
 Package epstopdf Info: Source file: <costcurve.eps>
 (epstopdf)                    date: 2014-12-10 15:16:27
 (epstopdf)                    size: 9226 bytes
@@ -161,14 +161,15 @@ Package epstopdf Info: Source file: <costcurve.eps>
 (epstopdf)                    size: 5620 bytes
 (epstopdf)             Command: <repstopdf --outfile=costcurve-eps-converted-to
 .pdf costcurve.eps>
-(epstopdf)             \includegraphics on input line 93.
+(epstopdf)             \includegraphics on input line 100.
 Package epstopdf Info: Output file is already uptodate.
 
-<costcurve-eps-converted-to.pdf, id=13, 561.09625pt x 421.575pt>
+<costcurve-eps-converted-to.pdf, id=16, 561.09625pt x 421.575pt>
 File: costcurve-eps-converted-to.pdf Graphic file (type pdf)
 
 <use costcurve-eps-converted-to.pdf>
-Package pdftex.def Info: costcurve-eps-converted-to.pdf used on input line 93.
+Package pdftex.def Info: costcurve-eps-converted-to.pdf used on input line 100.
+
 (pdftex.def)             Requested size: 301.1261pt x 226.24477pt.
 Package epstopdf Info: Source file: <generr.eps>
 (epstopdf)                    date: 2014-12-10 15:17:19
@@ -178,14 +179,14 @@ Package epstopdf Info: Source file: <generr.eps>
 (epstopdf)                    size: 7281 bytes
 (epstopdf)             Command: <repstopdf --outfile=generr-eps-converted-to.pd
 f generr.eps>
-(epstopdf)             \includegraphics on input line 100.
+(epstopdf)             \includegraphics on input line 107.
 Package epstopdf Info: Output file is already uptodate.
 
-<generr-eps-converted-to.pdf, id=14, 563.10374pt x 421.575pt>
+<generr-eps-converted-to.pdf, id=17, 563.10374pt x 421.575pt>
 File: generr-eps-converted-to.pdf Graphic file (type pdf)
 
 <use generr-eps-converted-to.pdf>
-Package pdftex.def Info: generr-eps-converted-to.pdf used on input line 100.
+Package pdftex.def Info: generr-eps-converted-to.pdf used on input line 107.
 (pdftex.def)             Requested size: 301.1261pt x 225.44067pt.
 Package epstopdf Info: Source file: <precisionrecall.eps>
 (epstopdf)                    date: 2014-12-10 15:18:43
@@ -195,18 +196,18 @@ Package epstopdf Info: Source file: <precisionrecall.eps>
 (epstopdf)                    size: 7484 bytes
 (epstopdf)             Command: <repstopdf --outfile=precisionrecall-eps-conver
 ted-to.pdf precisionrecall.eps>
-(epstopdf)             \includegraphics on input line 107.
+(epstopdf)             \includegraphics on input line 114.
 Package epstopdf Info: Output file is already uptodate.
 
-<precisionrecall-eps-converted-to.pdf, id=15, 660.4675pt x 550.055pt>
+<precisionrecall-eps-converted-to.pdf, id=18, 660.4675pt x 550.055pt>
 File: precisionrecall-eps-converted-to.pdf Graphic file (type pdf)
 
 <use precisionrecall-eps-converted-to.pdf>
 Package pdftex.def Info: precisionrecall-eps-converted-to.pdf used on input lin
-e 107.
+e 114.
 (pdftex.def)             Requested size: 301.1261pt x 250.79579pt.
- [3] [4 <./costcurve-eps-converted-to.pdf> <./generr-eps-converted-to.pdf>] [5 
-<./precisionrecall-eps-converted-to.pdf>] [6] (./finalreport.aux)
+ [4 <./costcurve-eps-converted-to.pdf>] [5 <./generr-eps-converted-to.pdf> <./p
+recisionrecall-eps-converted-to.pdf>] (./finalreport.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
@@ -214,19 +215,19 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Here is how much of TeX's memory you used:
  1521 strings out of 493117
  22197 string characters out of 6135433
- 81123 words of memory out of 5000000
+ 80123 words of memory out of 5000000
  4983 multiletter control sequences out of 15000+600000
  6627 words of font info for 24 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,23p,886b,225s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,6n,23p,788b,225s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
 sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on finalreport.pdf (6 pages, 68606 bytes).
+Output written on finalreport.pdf (5 pages, 70563 bytes).
 PDF statistics:
- 57 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
