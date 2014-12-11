@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  10 DEC 2014 17:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  10 DEC 2014 21:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -56,35 +56,93 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen105
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen106
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen107
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks16
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks17
+\eqnshift@=\dimen108
+\alignsep@=\dimen109
+\tagshift@=\dimen110
+\tagwidth@=\dimen111
+\totwidth@=\dimen112
+\lineht@=\dimen113
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
 (./finalreport.aux)
 \openout1 = `finalreport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count88
-\scratchdimen=\dimen105
-\scratchbox=\box26
-\nofMPsegments=\count89
-\nofMParguments=\count90
-\everyMPshowfont=\toks15
-\MPscratchCnt=\count91
-\MPscratchDim=\dimen106
-\MPnumerator=\count92
-\makeMPintoPDFobject=\count93
-\everyMPtoPDFconversion=\toks16
+\scratchcounter=\count100
+\scratchdimen=\dimen114
+\scratchbox=\box28
+\nofMPsegments=\count101
+\nofMParguments=\count102
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count103
+\MPscratchDim=\dimen115
+\MPnumerator=\count104
+\makeMPintoPDFobject=\count105
+\everyMPtoPDFconversion=\toks21
 ) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -133,101 +191,129 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 12.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 12.
-
 [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (9.22641pt too wide) in paragraph at lines 43--44
-[]\OT1/cmr/m/n/12 Taken from https://archive.ics.uci.edu/ml/datasets/Mammograph
-ic+Mass 
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 53.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
- [2] [3]
+[2] [3] [4] [5]
 Package epstopdf Info: Source file: <costcurve.eps>
-(epstopdf)                    date: 2014-12-10 15:16:27
-(epstopdf)                    size: 9226 bytes
+(epstopdf)                    date: 2014-12-10 21:34:05
+(epstopdf)                    size: 9789 bytes
 (epstopdf)             Output file: <costcurve-eps-converted-to.pdf>
 (epstopdf)                    date: 2014-12-10 15:42:42
 (epstopdf)                    size: 5620 bytes
 (epstopdf)             Command: <repstopdf --outfile=costcurve-eps-converted-to
 .pdf costcurve.eps>
-(epstopdf)             \includegraphics on input line 100.
-Package epstopdf Info: Output file is already uptodate.
+(epstopdf)             \includegraphics on input line 120.
+runsystem(repstopdf --outfile=costcurve-eps-converted-to.pdf costcurve.eps)...e
+xecuted safely (allowed).
 
-<costcurve-eps-converted-to.pdf, id=16, 561.09625pt x 421.575pt>
+Package epstopdf Info: Result file: <costcurve-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-12-10 21:41:49
+(epstopdf)                    size: 7378 bytes.
+
+<costcurve-eps-converted-to.pdf, id=27, 615.29875pt x 445.665pt>
 File: costcurve-eps-converted-to.pdf Graphic file (type pdf)
 
 <use costcurve-eps-converted-to.pdf>
-Package pdftex.def Info: costcurve-eps-converted-to.pdf used on input line 100.
+Package pdftex.def Info: costcurve-eps-converted-to.pdf used on input line 120.
 
-(pdftex.def)             Requested size: 301.1261pt x 226.24477pt.
+(pdftex.def)             Requested size: 301.1261pt x 218.11255pt.
 Package epstopdf Info: Source file: <generr.eps>
-(epstopdf)                    date: 2014-12-10 15:17:19
-(epstopdf)                    size: 10100 bytes
+(epstopdf)                    date: 2014-12-10 21:31:36
+(epstopdf)                    size: 10176 bytes
 (epstopdf)             Output file: <generr-eps-converted-to.pdf>
 (epstopdf)                    date: 2014-12-10 15:42:43
 (epstopdf)                    size: 7281 bytes
 (epstopdf)             Command: <repstopdf --outfile=generr-eps-converted-to.pd
 f generr.eps>
-(epstopdf)             \includegraphics on input line 107.
-Package epstopdf Info: Output file is already uptodate.
+(epstopdf)             \includegraphics on input line 127.
+runsystem(repstopdf --outfile=generr-eps-converted-to.pdf generr.eps)...execute
+d safely (allowed).
 
-<generr-eps-converted-to.pdf, id=17, 563.10374pt x 421.575pt>
+Package epstopdf Info: Result file: <generr-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-12-10 21:41:53
+(epstopdf)                    size: 7669 bytes.
+
+<generr-eps-converted-to.pdf, id=28, 805.0075pt x 478.78876pt>
 File: generr-eps-converted-to.pdf Graphic file (type pdf)
 
 <use generr-eps-converted-to.pdf>
-Package pdftex.def Info: generr-eps-converted-to.pdf used on input line 107.
-(pdftex.def)             Requested size: 301.1261pt x 225.44067pt.
+Package pdftex.def Info: generr-eps-converted-to.pdf used on input line 127.
+(pdftex.def)             Requested size: 301.1261pt x 179.09969pt.
 Package epstopdf Info: Source file: <precisionrecall.eps>
-(epstopdf)                    date: 2014-12-10 15:18:43
-(epstopdf)                    size: 11240 bytes
+(epstopdf)                    date: 2014-12-10 21:35:13
+(epstopdf)                    size: 11263 bytes
 (epstopdf)             Output file: <precisionrecall-eps-converted-to.pdf>
 (epstopdf)                    date: 2014-12-10 15:42:45
 (epstopdf)                    size: 7484 bytes
 (epstopdf)             Command: <repstopdf --outfile=precisionrecall-eps-conver
 ted-to.pdf precisionrecall.eps>
-(epstopdf)             \includegraphics on input line 114.
-Package epstopdf Info: Output file is already uptodate.
+(epstopdf)             \includegraphics on input line 134.
+runsystem(repstopdf --outfile=precisionrecall-eps-converted-to.pdf precisionrec
+all.eps)...executed safely (allowed).
 
-<precisionrecall-eps-converted-to.pdf, id=18, 660.4675pt x 550.055pt>
+Package epstopdf Info: Result file: <precisionrecall-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-12-10 21:41:57
+(epstopdf)                    size: 7775 bytes.
+
+<precisionrecall-eps-converted-to.pdf, id=29, 619.31375pt x 494.84875pt>
 File: precisionrecall-eps-converted-to.pdf Graphic file (type pdf)
 
 <use precisionrecall-eps-converted-to.pdf>
 Package pdftex.def Info: precisionrecall-eps-converted-to.pdf used on input lin
-e 114.
-(pdftex.def)             Requested size: 301.1261pt x 250.79579pt.
- [4 <./costcurve-eps-converted-to.pdf>] [5 <./generr-eps-converted-to.pdf> <./p
-recisionrecall-eps-converted-to.pdf>] (./finalreport.aux)
+e 134.
+(pdftex.def)             Requested size: 301.1261pt x 240.61298pt.
+Package epstopdf Info: Source file: <precisionrecallSup.eps>
+(epstopdf)                    date: 2014-12-10 21:32:59
+(epstopdf)                    size: 11293 bytes
+(epstopdf)             Output file: <precisionrecallSup-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=precisionrecallSup-eps-con
+verted-to.pdf precisionrecallSup.eps>
+(epstopdf)             \includegraphics on input line 141.
+runsystem(repstopdf --outfile=precisionrecallSup-eps-converted-to.pdf precision
+recallSup.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <precisionrecallSup-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-12-10 21:42:02
+(epstopdf)                    size: 8003 bytes.
+
+<precisionrecallSup-eps-converted-to.pdf, id=30, 626.34pt x 495.8525pt>
+File: precisionrecallSup-eps-converted-to.pdf Graphic file (type pdf)
+
+<use precisionrecallSup-eps-converted-to.pdf>
+Package pdftex.def Info: precisionrecallSup-eps-converted-to.pdf used on input 
+line 141.
+(pdftex.def)             Requested size: 301.1261pt x 238.39993pt.
+ [6] [7 <./costcurve-eps-converted-to.pdf> <./generr-eps-converted-to.pdf>] [8 
+<./precisionrecall-eps-converted-to.pdf> <./precisionrecallSup-eps-converted-to
+.pdf>] [9] (./finalreport.bbl
+[10]) [11] (./finalreport.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 1521 strings out of 493117
- 22197 string characters out of 6135433
- 80123 words of memory out of 5000000
- 4983 multiletter control sequences out of 15000+600000
- 6627 words of font info for 24 fonts, out of 8000000 for 9000
+ 2145 strings out of 493117
+ 29295 string characters out of 6135433
+ 92479 words of memory out of 5000000
+ 5581 multiletter control sequences out of 15000+600000
+ 10280 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,23p,788b,225s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,23p,954b,226s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on finalreport.pdf (5 pages, 70563 bytes).
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
+ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on finalreport.pdf (11 pages, 146104 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 104 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

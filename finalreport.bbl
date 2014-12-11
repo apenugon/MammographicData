@@ -1,0 +1,61 @@
+\begin{thebibliography}{10}
+
+\bibitem{barnes}
+Eric Barnes.
+\newblock Reading mammograms: the good, the bad, and the suspicious.
+
+\bibitem{birads}
+et~al. Basak Erguvan-Dogan, Gary J.~Whitman.
+\newblock Bi-rads-mri: A primer.
+\newblock {\em AJR}, 187, 2006.
+
+\bibitem{boyd}
+Guo H et~al. Boyd~NF.
+\newblock Mammography density and the risk and detection of breast cancer.
+\newblock {\em New England Journal of Medicine}, 356, 2007.
+
+\bibitem{DH}
+Sanjoy Dasgupta.
+\newblock Two faces of active learning.
+\newblock {\em Theoretical Computer Science}, 412, 2011.
+
+\bibitem{benignOrMalignant}
+Stephen~B. Halls.
+\newblock Benign or malignant sonographic characteristics of solid breast
+  nodules.
+
+\bibitem{shapeMarginDensity}
+Stephen~B. Halls.
+\newblock Mass shape, margin, and density as found with screening mammography.
+
+\bibitem{dataset}
+Dr. R. Shulz-Wendtland M.~Elter.
+\newblock Mammographic mass data set.
+
+\bibitem{predictionCAD}
+T.~Wittenberg M.~Elter, R. Schulz-Wendtland.
+\newblock The prediction of breast cancer biopsy outcomes using two cad
+  approaches that both emphasize an intelligible decision process.
+\newblock {\em Medical Physics}, 34, 2007.
+
+\bibitem{review}
+Paul Sajda.
+\newblock Machine learning for detection and diagnosis of disease.
+\newblock {\em Annual Review of Biomedical Engineering}, 8, 2006.
+
+\bibitem{shipp}
+Margaret~A. Shipp.
+\newblock Diffuse large b-cell lymphoma outcome prediction by gene-expression
+  profiling and supervised machine learning.
+\newblock {\em Nature Medicine}, 8, 2002.
+
+\bibitem{white}
+Judith White.
+\newblock Breast density and cancer risk: What is the relationship?
+
+\bibitem{zhang}
+Ping Zhang.
+\newblock A neural-genetic algorithm for feature selection and breast
+  abnormality classification in digital mammography.
+
+\end{thebibliography}

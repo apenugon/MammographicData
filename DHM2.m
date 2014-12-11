@@ -121,8 +121,9 @@ plot(recall, 'r');
 hold on;
 plot(f1score, 'g');
 hold off;
-
-
+precision
+recall
+f1score
 end
 
 function [err] = getErr(svm, features, labels)
