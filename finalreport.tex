@@ -14,11 +14,11 @@
 
 \section{Introduction}
 
-Currently, the scenario in an oncologist's room is thus: a patient enters with a potential tumor determined by a mammogram performed on the patient, which is diagnosed by a doctor as either possibly malignant or non-malignant. If possibly malignant, a biopsy is performed to verify. A biopsy can cost anywhere from \$150 to \$10000, and is a painfully invasive procedure which should be avoided if possible, for both cost and comfort. An active learning approach could result in a lot of saved money and pain for the patient. In this paper, we discuss an application of DHM to a mammographic mass dataset, using only features which may be acquired by non-invasive methods, namely a mammogram.  Our results show that DHM's learning approaches the accuracy of a supervised learner, indicating potential benefits to using this in the real world.
+Currently, the scenario in an oncologists room is thus: a patient enters with a potential tumor determined by a mammogram performed on the patient, which is diagnosed by a doctor as either possibly malignant or benign. If possibly malignant, a biopsy is performed to verify. A biopsy can cost anywhere from \$150 to \$10000, and is a painfully invasive procedure which should be avoided if possible, for both cost and comfort. An active learning approach could result in a lot of saved money and pain for the patient. In this paper, we discuss an application of DHM to a mammographic mass dataset, using only features which may be acquired by non-invasive methods, namely a mammogram.  Our results show that DHM's learning approaches the accuracy of a supervised learner, indicating potential benefits to using this in the real world.
 
 \section{Background}
 
-A mammogram yields three features that are characteristic of tumors. These three features are shape of mass in the breast, margin of the mass, and density of the mass. We will use these together with the age of the patient to predict severity, i.e. whether the mass in the patients breast is benign or malignant. Before discussing the learner, we will go over the role that each of these features play in relation to the mass observed being malignant or benign.
+A mammogram yields three features that are characteristic of tumors when there is a mass in the breast. These three features are shape of mass in the breast, margin of the mass, and density of the mass. We will use these together with the age of the patient to predict severity, i.e. whether the mass in the patients breast is benign or malignant. Before discussing the learner, we will go over the role that each of these features play in relation to the mass observed being malignant or benign.
 
 \subsection{Density}
 
@@ -57,9 +57,9 @@ Irregular masses are indicative of malignancy by virtue of the fact that they ar
 
 There is a large corpus of papers using machine learning to predict the incidence of disease. Shipp and Ross (2002) created a supervised learner to predict lymphoma outcomes for two classes of patients \cite{shipp}. SVMs have also been used in the classification of leukemia, colon cancer, and ovarian cancer. The hardest part about this classification is the high dimensionality of microarray results in relation to the number of samples actually available \cite{review}.
 
-Zhang used a similar mammographic mass set to create a neural-genetic algorithm that performs binary classification. This method obtained an 87.2\% success rate \cite{zhang} Elter et al. proposed two different learning methods on this data set. The first method was a decision tree. The second method relies on case-based reasoning. Both of these methods outperform an artificial neural network, and both also use the BI-RAD feature. \cite{predictionCAD}. \%. 
+Zhang used a similar mammographic mass set to create a neural-genetic algorithm that performs binary classification. This method obtained an 87.2\% success rate \cite{zhang} Elter et al. proposed two different learning methods on this data set. The first method was a decision tree. The second method relies on case-based reasoning. Both of these methods outperform an artificial neural network, and both also use the BI-RAD feature. \cite{predictionCAD}. 
 
-Our project differs from these in that we do not use the BI-RAD feature of the data - we only use the 4 features that are not in and of themselves a statement on the severity of a tumor.
+Our project differs from these in that we do not use the BI-RAD feature of the data, and we similarly are taking an approach that relies on only the results of a mammogram.
 
 \section{Methods}
 
