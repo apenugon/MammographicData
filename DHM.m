@@ -5,7 +5,7 @@
 % It can be run simply by calling this matlab routine. It outputs graphs of 
 % Generalization error as well as precision recall and F1 score
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [GenErr] = DHM2()
+function [GenErr] = DHM()
 rng(47);
 data = csvread('mammographic_masses.data');
 % We do not use BI-RADS but do use all other features
@@ -102,7 +102,7 @@ for t = upper+1:numsamples
 
     % Compute recall, precision, accuracy
     curPredictions = predict(cursvm, featureData);
-    numerator = size(find(curPredictions == 1 & TRUE_LABELS == 1), 1)
+    numerator = size(find(curPredictions == 1 & TRUE_LABELS == 1), 1);
     denom = sum(TRUE_LABELS == 1);
     recall(t) = numerator/denom;
 
