@@ -14,7 +14,7 @@
 
 \section{Introduction}
 
-Currently, the scenario in an oncologists room is thus: a patient enters with a potential tumor determined by a mammogram performed on the patient, which is diagnosed by a doctor as either possibly malignant or benign. If possibly malignant, a biopsy is performed to verify. A biopsy can cost anywhere from \$150 to \$10000, and is a painfully invasive procedure which should be avoided if possible, for both cost and comfort. An active learning approach could result in a lot of saved money and pain for the patient. In this paper, we discuss an application of DHM to a mammographic mass dataset, using only features which may be acquired by non-invasive methods, namely a mammogram.  Our results show that DHM's learning approaches the accuracy of a supervised learner, indicating potential benefits to using this in the real world.
+Currently, the scenario in an oncologists room is thus: a patient enters with a potential tumor determined by a mammogram performed on the patient, which is diagnosed by a doctor as either possibly malignant or benign. If possibly malignant, a biopsy is performed to verify. A biopsy can cost anywhere from \$150 to \$10000, and is a painfully invasive procedure which should be avoided if possible, for both cost and comfort. An active learning approach could result in a lot of saved money and pain for the patient. In this paper, we discuss an application of DHM to a mammographic mass dataset, using only features which may be acquired by non-invasive methods, namely a mammogram.  Our results show that DHM's learning approaches the accuracy of a supervised learner, indicating potential benefits to using this method in the real world.
 
 \section{Background}
 
@@ -24,7 +24,7 @@ A mammogram yields three features that are characteristic of tumors when there i
 
 Density of mammographic mass does not refer to the traditional definition of density (mass/volume), rather it refers to the amount of fat and tissue in the breast. A dense breast is one that has more tissue than fat. Studies have shown that women with high breast density are 4-5 times more likely to develop breast cancer compared to women with low breast density \cite{boyd, white}. 
 
-Density is an ordinal field, that is, the higher the density the higher the chance of the mass being malignant.
+Density is an ordinal field - that is, the higher the density the higher the chance of the mass being malignant.
 
 \subsection{Margin}
 
@@ -65,7 +65,7 @@ Our project differs from these in that we do not use the BI-RAD feature of the d
 
 \subsection{Data Source}
 
-We got our data from the UCI machine learning repository. The below data set has 961 entries, where each entry contains the following features and labellings: 
+We got our data from the UCI machine learning repository. The below data set has 961 entries, where each entry contains the following features and labelings: 
 
 6 Attributes in total (1 goal field, 1 non-predictive, 4 predictive attributes) 
 \begin{enumerate}
@@ -79,13 +79,12 @@ We got our data from the UCI machine learning repository. The below data set has
 
 Taken from \cite{dataset}.
 
-We did not use BI-RADS as it is too predictive of a feature, we will instead just use Age, Shape, Margin and Density to predict Severity. The above data set contains 516 benign entries and 445 malignant entries and as such is fairly evenly distributed.
+We did not use BI-RADS as it is too predictive of a feature. We will instead just use Age, Shape, Margin and Density to predict Severity. The above data set contains 516 benign entries and 445 malignant entries and as such is fairly evenly distributed.
 
 \subsection{Active Learning}
 As discussed in the introduction we envision the following scenario. We are running a hospital which offers mammograms and biopsies to patients and we need some metric to determine which patients need to go for a biopsy after having a mammogram taken. We will not use BI-RADS at all to make this decision as BI-RADS is simply an aggregative result based on the information gleaned from the mammogram. As in any hospital setting we cannot choose which patients we receive and at what times. Thus we are led to adopt a streaming data model for our active learning algorithm. Similarly, we only get one shot to run our algorithm as there are no do overs in the medical world and we are not able to change our algorithm whilst it is making predictions for patients. This leads us to fix a random seed to our data and ensure that a specific ordering takes place (such that each run isn't reliant on the whims of the random number generator).
 
-We applied 
-M to a fixed random subset of 100 data points from the total set. This was meant to simulate the stream of patients that a hospital receives. In the DHM algorithm there are 4 major areas that need to be discussed, namely: using SVM's to represent our hypotheses, the calculation of errors on our positive and negative hypotheses, the generalization bound Delta, and the consistency of hypotheses from iteration to iteration.
+We applied DHM to a fixed random subset of 100 data points from the total set. This was meant to simulate the stream of patients that a hospital receives. In the DHM algorithm there are 4 major areas that need to be discussed, namely: using SVM's to represent our hypotheses, the calculation of errors on our positive and negative hypotheses, the generalization bound Delta, and the consistency of hypotheses from iteration to iteration.
 
 \subsubsection{Support Vector Machines}
 Our algorithm utilized Matlab's built in Support Vector Machine framework to represent our hypotheses. This allows us to facilitate binary classification in an easy manner. We used the standard linear kernel built in to Matlab, and as we will see later, this makes calculation of delta easy.
@@ -108,7 +107,7 @@ An important part of DHM is measurement of the consistency of hypotheses when le
 
 \subsection{Supervised Learning}
 
-We have also included a supervised learner which learns alongside the active learner but on every iteration of the algorithm asks the oracle for a label for the given point. We can imagine the supervised learner as a doctor who wants to completely remove all possibility of false negatives, and as such sends every patient that comes in for a biopsy. Whilst this is an obscure notion, one could forsee a clinic in which a similar case was happening. 
+We have also included a supervised learner which learns alongside the active learner but on every iteration of the algorithm asks the oracle for a label for the given point. We can imagine the supervised learner as a doctor who wants to completely remove all possibility of false negatives, and as such sends every patient that comes in for a biopsy. Whilst this is an obscure notion, one could foresee a clinic in which a similar case was happening. 
 
 \section{Results}
 Our active learning strategy achieves a 21.75\% generalization error rate. Looking at figure \ref{fig:generr}, we see that our active learner converges to the same error rate that our supervised learner achieves. What is interesting is that unlike the supervised learner, we only query from the oracle 44 times (as seen in figure \ref{fig:costcurve}) which is less than 50\% of the number of times the supervised learner queries.
@@ -146,20 +145,20 @@ We achieve a precision of 72.69\%, recall of 84.94\% and as such our final F1 sc
 
 
 \section{Discussion}
-As seen in figure \ref{fig:generr} we converge in error rate to a supervised learner which queries the oracle on every new point. We only query the oracle a total of 44 times (as seen in figure \ref{fig:costcurve}) which is less than half of the initial stream of 100 data points seen. This means that our method is inferring more than half of the points with the same error rate as the supervised learner. The cost savings of this are huge especially when factoring in the cost of a biopsy. This is due to the fact that we only go to the oracle for points that are close to the margin (i.e. points that are consistent under both the positive and negative hypothesis). This approach to inference works incredibly well with support vector machines which try and maximize the distance from points to the margin of separation, as it becomes very clear which points are near the margin.
+As seen in Figure \ref{fig:generr} we converge in error rate to a supervised learner which queries the oracle on every new point. We only query the oracle a total of 44 times (as seen in Figure \ref{fig:costcurve}) which is less than half of the initial stream of 100 data points seen. This means that our method is inferring more than half of the points with the same error rate as the supervised learner. The cost savings of this are huge especially when factoring in the cost of a biopsy. This is due to the fact that we only go to the oracle for points that are close to the margin (i.e. points that are consistent under both the positive and negative hypothesis). This approach to inference works incredibly well with support vector machines which try and maximize the distance from points to the margin of separation, as it becomes very clear which points are near the margin.
 
-We notice that our cost curve (figure\ref{fig:costcurve}) increases linearly initially and then has patches in which no queries to the oracle are performed. This makes sense as the initial points give a lot of information to the support vector machine, and allow it to stratify its margin. Once it has acquired a sufficient number of points, inferences can start to be made. We observe that this point of ?sufficiency? occurs at around 15 queries to the oracle.
+We notice that our cost curve (Figure \ref{fig:costcurve}) increases linearly initially and then has patches in which no queries to the oracle are performed. This makes sense as the initial points give a lot of information to the support vector machine, and allow it to stratify its margin. Once it has acquired a sufficient number of points, inferences can start to be made. We observe that this point of ?sufficiency? occurs at around 15 queries to the oracle.
 
-From Figure \ref{fig:precisionrecall}, we can see that the precision, recall, and F1 score for our active learner all peak early on. This is likely due to chance - the learner simply picks a couple points that happen to be very representative of the model as a whole. The collective dip around the 10pt mark indicates the curve overcorrecting as it recieves more data. Precision, recall and F1 score all continually increase as more samples are recieved - this indicates that the model is becoming more and more accurate.
+From Figure \ref{fig:precisionrecall}, we can see that the precision, recall, and F1 score for our active learner all peak early on. This is likely due to chance - the learner simply picks a couple points that happen to be very representative of the model as a whole. The collective dip around the 10pt mark indicates the curve overcorrecting as it receives more data. Precision, recall and F1 score all continually increase as more samples are received - this indicates that the model is becoming more and more accurate.
 
-We can see that the supervised learner's curves are much different in Figure \ref{fig:precisionrecallSup}. It too peaks early on, then dips and recovers. However when it comes back up, it comes back up to a plateau. This indicates that though it recieves more samples, it is not getting better. The active learner, though, continuously gets better.
+We can see that the supervised learner's curves are much different in Figure \ref{fig:precisionrecallSup}. It too peaks early on, then dips and recovers. However when it comes back up, it comes back up to a plateau. This indicates that though it receives more samples, it is not getting better. The active learner, though, continuously gets better until it also hits a plateau, at about the same level as the supervised learner. This shows that the active learner approaches the performance of the supervised learner, even while using less samples.
 
 \section{Conclusion}
 
-It is clear that our DHM achieves near parity to a supervised learner, while using less than half of the samples. A doctor using this DHM approach could expect to spend less than half what they currently spend on biopsies (assuming that they currently make all of their suspect patients recieve biopsies). DHM can be used as a supplemental aid for doctors who are diagnosing patients. 
+It is clear that our DHM achieves near parity to a supervised learner, while using less than half of the samples. A doctor using this DHM approach could expect to spend less than half what they currently spend on biopsies (assuming that they currently make all of their suspect patients receive biopsies). DHM would be a supplemental aid for doctors who are diagnosing patients. 
 
 \subsection{Future Work}
-An important aspect of the diagnosis process is the role of false negatives, i.e. malignant tumors not sent to biopsy. Doctors usually err on the side of reducing false negatives to 0 as it is much less costly to have a patient go for a biopsy and not have cancer, than for them to not go for a biospy but have cancer. Doctors take this into account when determining which patients to send for biopsy, however we have not considered this at all. A method to overcome this might involve giving the weighing our hypotheses in such a way that sends more people for biopsies if they are near the margin of our support vector machine. This would be a further area of study and might yield some interesting results.
+An important aspect of the diagnosis process is the role of false negatives, i.e. malignant tumors not sent to biopsy. Doctors usually err on the side of reducing false negatives to 0 as it is much less costly to have a patient go for a biopsy and not have cancer, than for them to not go for a biopsy but have cancer. Doctors take this into account when determining which patients to send for biopsy, however we have not considered this at all. A method to overcome this might involve giving the weighing our hypotheses in such a way that sends more people for biopsies if they are near the margin of our support vector machine. This would be a further area of study and might yield some interesting results.
 
 We have a somewhat high false positive rate. We could expand our learner to use more features i.e. BI-RADS as a confirmatory measure. Also, we chose to represent our hypothesis as an SVM. It is possible that a k-d tree would be more useful for this sort of classification. More experimentation with different hypothesis models would be better to determine the best approach.
 
